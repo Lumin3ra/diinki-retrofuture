@@ -81,13 +81,12 @@ The most important default bindings are:
 - `mod` = the super key, (the windows key, as some people refer to it as). You can re-bind mod to something else if you wish.
 
 - `mod` + `Enter` = launch terminal.
-- `mod` + `D` = launch application launcher.
+- `mod` = launch application launcher.
 - `mod` + `[any number, 1-9]` = switch focus to the workspace equivalent to the number.
 - `mod` + `Shift` + ` [any number, 1-9]` = move the focused window to the workspace equivalent to the number.
-- `mod` + `Shift` + ` Space` = toggle floating mode for the focused window.
-- `mod` + `Shift` + ` C` = restart eww and all other things such as waybar and eww.
-- `mod` + ` Q` = Exit/Kill the focused window.
-- `mod` + `F` = toggle full-screen mode for the focused window.
+- `mod` + `V` = toggle floating mode for the focused window.
+- `mod` + `C` = Exit/Kill the focused window.
+- `F11` = toggle full-screen mode for the focused window.
 - `mod` + `Right Mouse Button` = re-size a window
 - `mod` + `Left Mouse Button` = move a window
 
@@ -97,8 +96,7 @@ The most important default bindings are:
 
 This rice uses the following tools and softwares:
 
-- `sway` (The window manager)
-- `hyprland` (The alternate window manager)
+- `hyprland` (The window manager)
 - `wofi` (Application Launcher)
 - `waybar` (Taskbar/Infobar)
 - `dconf` & `dconf-editor` (Used to edit gtk themes and cursors, and default softwares used)
