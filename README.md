@@ -52,10 +52,10 @@ Feel free to watch [this part of my video](https://youtu.be/jFz5gLqv-FM&t=1903) 
 **I assume you use arch / arch-based, but the steps should be similar regardless.**
 
 1. `Installation`
-   - Run `sudo pacman -S sway wofi waybar nemo nautilus kitty dconf dconf-editor` in your terminal.
+   - Run `sudo pacman -S wofi waybar nemo nautilus kitty vscode fastfetch pavucontrol hyprpolkitagent hyprshot` in your terminal.
    - Run `yay eww` in your terminal (you will need to install yay).
    - Install the [Maple Mono font](https://github.com/subframe7536/Maple-font), as this font is used a lot in this Linux rice. Move the font-file to `/usr/share/fonts`, then run `fc-cache -f -v` to update the fonts.
-   - Run `git clone https://github.com/diinki/diinki-retrofuture` to clone this repo, or install it from the Releases section.
+   - Run `git clone https://github.com/Lumin3ra/diinki-retrofuture` to clone this repo, or install it from the Releases section.
 2. `Configuration & Setup`
    - Copy all folders in the `diinki-retrofuture/config` directory to your local user `.config` directory
      (`~/.config`). Skip the `hypr` folder if you don't also want the hyprland config files.
