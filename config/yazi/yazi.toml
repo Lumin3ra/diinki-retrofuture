@@ -1,0 +1,17 @@
+[opener]
+edit = [
+	{ run = 'code "$@"', desc = "Code", block = true, for = "unix" },
+]
+open = [
+	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
+]
+reveal = [
+	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
+]
+extract = [
+	{ run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
+]
+play = [
+	{ run = 'amberol "$@"', orphan = true, for = "unix" },
+	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+]
