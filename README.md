@@ -1,8 +1,5 @@
 # Retro-Futuristic Linux Rice
-
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E81FQW4S)
-
-If you enjoy the content & art I create, feel entirely free to give a tip on kofi!
+this is a fork of a linux rice created by diinki
 
 ---
 
@@ -38,18 +35,7 @@ If you enjoy the content & art I create, feel entirely free to give a tip on kof
 
 </details>
 
-diinki-retrofuture is a rice that revolves around [this](https://youtu.be/jFz5gLqv-FM) youtube
-video, where I teach how to make this exact rice from scratch. Naturally, the github version
-has cleaner config files and more comments, I bid you a read of the config files and code; you will need to
-edit some lines yourself regardless.
-
-This project also includes a GTK3/4 theme which matches the aesthetic.
-
 ## 📌 Installation Steps
-
-Feel free to watch [this part of my video](https://youtu.be/jFz5gLqv-FM&t=1903) where I demonstrate how to install this rice.
-
-**I assume you use arch / arch-based, but the steps should be similar regardless.**
 
 1. `Installation`
    - Run `sudo pacman -S wofi waybar nemo nautilus kitty vscode fastfetch pavucontrol hyprpolkitagent hyprshot` in your terminal.
@@ -60,22 +46,13 @@ Feel free to watch [this part of my video](https://youtu.be/jFz5gLqv-FM&t=1903) 
    - Copy all folders in the `diinki-retrofuture/config` directory to your local user `.config` directory
      (`~/.config`). Skip the `hypr` folder if you don't also want the hyprland config files.
    - Copy the `diinki-retro-dark` folder in `diinki-retrofuture/gtk_theme` to your local `.themes` directory (`~/.themes`), you may need to create this directory manually.
-   - Use a text editor to edit the sway config file in `~/.config/sway/config`. You need to edit the config
+   - Use a text editor to edit the hyprland config file in `~/.config/hypr/hyprland.conf`. You need to edit the config
      to setup your wallpaper and monitor settings. I've commented the file with the steps.
    - Enter `dconf-editor` in your terminal to open up the dconf gui program, search "gtk-theme", and set the theme value to `diinki-retro-dark`. You may also use dconf to set your icon theme and cursor theme to ones of your liking.
-3. `Creative Liberty`
-
-   - I have the config files in a concise and descriptive manner, I recommend reading them and
-     editing them as you see fit; you may want to add or change things, such as the keybinds for sway, or
-     the fonts used.
-   - Feel free to continue reading this document for more details on the design & softwares used.
-
-   > Note: I have also included a Hyprland Config Directory (config/hypr), in case you want to use this rice with Hyprland,
-   > it works by default and the only thing you need to do is drag the hypr folder into your ~/.config directory.
 
 ### ⌨️ Keyboard bindings
 
-All key-binds can be find in the sway config file, simply refer to those and edit them if you'd like.
+All key-binds can be find in the hyprland/sway config file, simply refer to those and edit them if you'd like.
 The most important default bindings are:
 
 - `mod` = the super key, (the windows key, as some people refer to it as). You can re-bind mod to something else if you wish.
@@ -89,6 +66,7 @@ The most important default bindings are:
 - `F11` = toggle full-screen mode for the focused window.
 - `mod` + `Right Mouse Button` = re-size a window
 - `mod` + `Left Mouse Button` = move a window
+- `alt` + `tab` = cycle through open worspaces
 
 ---
 
