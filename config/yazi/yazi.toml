@@ -15,3 +15,14 @@ play = [
 	{ run = 'amberol "$@"', orphan = true, for = "unix" },
 	{ run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
+run = [
+	{ run = '"$0"', desc = "Run", block = true, for = "unix" },
+]
+sudo_run = [
+	{ run = 'sudo "$0"', desc = "Run as root", block = true, for = "unix" },
+]
+
+[open]
+prepend_rules = [
+	{ name = "*.sh", use = [ "run", "sudo_run" ]},
+]
