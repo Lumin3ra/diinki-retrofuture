@@ -1,14 +1,15 @@
-import os.path
-
+import os
 import webuntis
 import datetime
 import json
 import time
 
-if os.path.exists('webuntis-conf.json'):
-    configj = open('webuntis-conf.json', 'r')
+cwd = os.getcwd()
+
+if os.path.exists('.config/waybar/scripts/webuntis-conf.json'):
+    configj = open('.config/waybar/scripts/webuntis-conf.json', 'r')
 else:
-    configj = open('webuntis-conf-d.json', 'r')
+    configj = open('.config/waybar/scripts/webuntis-conf-d.json', 'r')
 
 config = json.load(configj)
 
@@ -20,7 +21,7 @@ s = webuntis.Session(
     useragent=config['useragent']
 )
 
-while config['enabled']:
+if config['enabled']:
 
     currentDate = datetime.date.today()
     currentTime = datetime.datetime.now().time()
@@ -43,4 +44,3 @@ while config['enabled']:
                 break
 
     s.logout()
-    time.sleep(5)
