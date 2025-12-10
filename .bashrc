@@ -12,4 +12,3 @@ PS1='[\u@\h \W]\$ '
 if [[ $(tty) == *"pts"* ]]; then
   fastfetch -c examples/13
 fi
-eval "$(zoxide init bash)"

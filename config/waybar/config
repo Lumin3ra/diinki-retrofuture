@@ -49,7 +49,7 @@
     "format": "{text}",
     "exec": "python ~/.config/waybar/scripts/webuntis-dsp.py",
     "return-type": "text",
-    "interval": 30
+    "restart-interval": 60
   },
   "tray": {
     "spacing": 10,

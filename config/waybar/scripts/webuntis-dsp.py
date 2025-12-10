@@ -4,8 +4,6 @@ import datetime
 import json
 import time
 
-cwd = os.getcwd()
-
 if os.path.exists('.config/waybar/scripts/webuntis-conf.json'):
     configj = open('.config/waybar/scripts/webuntis-conf.json', 'r')
 else:
@@ -13,18 +11,18 @@ else:
 
 config = json.load(configj)
 
-s = webuntis.Session(
-    server=config['server'],
-    username=config['username'],
-    password=config['password'],
-    school=config['school'],
-    useragent=config['useragent']
-)
-
-if config['enabled']:
+while config['enabled']:
 
     currentDate = datetime.date.today()
     currentTime = datetime.datetime.now().time()
+
+    s = webuntis.Session(
+        server=config['server'],
+        username=config['username'],
+        password=config['password'],
+        school=config['school'],
+        useragent=config['useragent']
+    )
 
     s.login()
 
@@ -40,7 +38,8 @@ if config['enabled']:
                 time_str = entries[0].strftime("%H:%M")
                 for date, periods in entries[1]:
                     for p in periods:
-                        print(f"{time_str} -> {p.subjects}{p.rooms}")
+                        print(f"{time_str} -> {p.subjects}{p.rooms}", flush=True)
                 break
 
     s.logout()
+    time.sleep(10)
