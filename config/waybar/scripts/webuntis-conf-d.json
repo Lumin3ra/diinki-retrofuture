@@ -1,0 +1,9 @@
+{
+    "enabled": false,
+    "server": "bns1.webuntis.com",
+    "school": "BNS1",
+    "useragent": "webuntis-waybar",
+    "username": "{username}",
+    "password": "{password}",
+    "klasse": "TGI-E"
+}

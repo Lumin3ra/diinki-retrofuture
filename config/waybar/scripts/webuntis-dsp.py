@@ -1,33 +1,46 @@
+import os.path
+
 import webuntis
 import datetime
+import json
+import time
+
+if os.path.exists('webuntis-conf.json'):
+    configj = open('webuntis-conf.json', 'r')
+else:
+    configj = open('webuntis-conf-d.json', 'r')
+
+config = json.load(configj)
 
 s = webuntis.Session(
-    server='bns1.webuntis.com',
-    username='###',
-    password='###',
-    school='BNS1',
-    useragent='WebUntis Test'
+    server=config['server'],
+    username=config['username'],
+    password=config['password'],
+    school=config['school'],
+    useragent=config['useragent']
 )
 
-currentDate = datetime.date.today()
-currentTime = datetime.datetime.now().time()
+while config['enabled']:
 
-s.login()
+    currentDate = datetime.date.today()
+    currentTime = datetime.datetime.now().time()
 
-klasse = s.klassen().filter(name='TGI-E')[0]
+    s.login()
 
-table = s.timetable(klasse=klasse, start=currentDate, end=currentDate).to_table()
+    klasse = s.klassen().filter(name=config['klasse'])[0]
 
-#print(table)
-if not table:
-    print('no classes')
-else:
-    for entries in table:
-        if entries[0] >= currentTime > datetime.time(6, 0):
-            time_str = entries[0].strftime("%H:%M")
-            for date, periods in entries[1]:
-                for p in periods:
-                    print(f"{time_str} -> {p.subjects}{p.rooms}")
-            break
+    table = s.timetable(klasse=klasse, start=currentDate, end=currentDate).to_table()
 
-s.logout()
+    if not table:
+        print('no classes')
+    else:
+        for entries in table:
+            if entries[0] >= currentTime > datetime.time(6, 0):
+                time_str = entries[0].strftime("%H:%M")
+                for date, periods in entries[1]:
+                    for p in periods:
+                        print(f"{time_str} -> {p.subjects}{p.rooms}")
+                break
+
+    s.logout()
+    time.sleep(5)

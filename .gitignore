@@ -1,3 +1,4 @@
 .git
 .tools
 config/waybar/scripts/__pycache__
+config/waybar/scripts/webuntis-conf.json

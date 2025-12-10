@@ -13,7 +13,8 @@
   ],
   "modules-center": [
     "clock#date",
-    "clock"
+    "clock",
+    "custom/webuntis"
   ],
   "modules-right": [
     "tray",
@@ -42,6 +43,11 @@
     "format": " {text}",
     "exec": "python /home/lumin3ra/Documents/waybar-speedtest.py",
     "on-click": "python /home/lumin3ra/Documents/waybar-speedtest.py",
+    "return-type": "text"
+  },
+  "custom/webuntis": {
+    "format": "{text}",
+    "exec": "python ~/.config/waybar/scripts/webuntis-dsp.py",
     "return-type": "text"
   },
   "tray": {
