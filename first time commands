@@ -1,2 +1,0 @@
-#add user to input group
-sudo usermod -aG input lumin3ra
