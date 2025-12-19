@@ -34,7 +34,7 @@ note: instructions are arch/arch based specific
 ### Keyboard bindings
 note: I'll be referring to the Windows/SUPER key as `mod` as that is the default in hyprland, `mod` you can also re bind mod in the hyprland config if you like, all other keybinds can be changed as well
 
-- `mod` + `W` = launch application menu (walker)
+- `mod` + `D` = launch application menu (walker)
 - `mod` + `Enter` = launch terminal
 - `mod` + `E` = launch file manager
 - `mod` + `B` = launch browser (default: zen)
@@ -45,7 +45,7 @@ note: I'll be referring to the Windows/SUPER key as `mod` as that is the default
 - `mod` + `left mouse button` = move active window
 - `mod` + `right mouse button` = resize active window
 
-- `mod` + `C` = kill active program
+- `mod` + `Q` = kill active program
 - `mod` + `L` = lock screen
 - `mod` + `V` = toggle floating
 - `mod` + `F` = fullscreen

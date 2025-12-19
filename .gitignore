@@ -2,3 +2,5 @@
 .tools
 config/waybar/scripts/__pycache__
 config/waybar/scripts/webuntis-conf.json
+config/waybar/scripts/soundcontrol-headless.py
+config/waybar/scripts/webuntis-dsp-dev.py
