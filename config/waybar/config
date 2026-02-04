@@ -9,7 +9,8 @@
   "margin-left": 5,
   "modules-left": [
     "hyprland/workspaces",
-    "sway/workspaces"
+    "sway/workspaces",
+    "niri/workspaces"
   ],
   "modules-center": [
     "clock#date",
@@ -30,6 +31,11 @@
     "tooltip": false
   },
   "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "niri/workspaces": {
     "disable-scroll": true,
     "all-outputs": false,
     "tooltip": false
