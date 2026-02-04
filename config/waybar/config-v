@@ -1,0 +1,165 @@
+{
+  "layer": "bot",
+  "spacing": 0,
+  "height": 0,
+  "margin-bottom": -5,
+  "margin-top": 5, //15
+  "position": "left",
+  "margin-right": 5,
+  "margin-left": 5,
+  "modules-left": [
+    "hyprland/workspaces",
+    "sway/workspaces",
+    "niri/workspaces"
+  ],
+  "modules-center": [
+    "clock#date",
+    "clock",
+    "custom/webuntis"
+  ],
+  "modules-right": [
+    "tray",
+    "network",
+    "pulseaudio",
+    "bluetooth",
+    "power-profiles-daemon",
+    "battery"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "niri/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "tooltip": false
+  },
+  "custom/applauncher": {
+    "format": "⭘",
+    "on-click": "pgrep wofi >/dev/null 2>&1 && killall wofi || wofi --show drun --location=top -y 15",
+    "tooltip": false
+  },
+  "custom/speedtest": {
+    "format": " {text}",
+    "exec": "python /home/lumin3ra/Documents/waybar-speedtest.py",
+    "on-click": "python /home/lumin3ra/Documents/waybar-speedtest.py",
+    "return-type": "text"
+  },
+  "custom/webuntis": {
+    "format": "{text}",
+    "exec": "python ~/.config/waybar/scripts/webuntis-dsp.py",
+    "return-type": "text",
+    "restart-interval": 60
+  },
+  "tray": {
+    "spacing": 10,
+    "tooltip": false
+  },
+  "clock": {
+    "format": "\n{:%H\n%M}",
+    "tooltip": false
+  },
+  "clock#date": {
+    "format": "\n{:%a\n%d\n%m\n%Y}",
+    "tooltip": false
+  },
+  "network": {
+    "format-wifi": " {bandwidthDownBits}",
+    "format-ethernet": "󰈀 {bandwidthDownBits}",
+    "format-disconnected": "󰤭 No Network",
+    "interval": 5,
+    "tooltip": false,
+    "on-click": "hyprwat --wifi"
+  },
+  "pulseaudio": {
+    "scroll-step": 5,
+    "max-volume": 150,
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-icons": [
+      " &#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;",
+      " &#9703;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9703;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9703;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9703;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9633;&#9633;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9703;&#9633;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9632;&#9633;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9632;&#9703;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9633;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9703;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9633;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9703;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9633;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9703;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9633;",
+      " &#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;&#9632;"
+      
+    ],
+    "nospacing": 1,
+    "format-muted": " ",
+    "on-click": "python ~/.config/waybar/scripts/soundcontrol.py",
+    "on-click-middle": "pavucontrol",
+    "tooltip": 1
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-full": "󱈑 {capacity}%",
+    "format-icons": [
+      "󱊡",
+      "󱊢",
+      "󱊣"
+    ]
+  },
+  "bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": " {status}",
+	"format-disabled": "", // an empty format will hide the module
+	"format-connected": " {num_connections} connected",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+  "on-click": "kitty bluetui"
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "cpu": {
+     "interval": 1,
+     "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}",
+     "format-icons": [
+          "<span color='#69ff94'>▁</span>", // green
+          "<span color='#2aa9ff'>▂</span>", // blue
+          "<span color='#f8f8f2'>▃</span>", // white
+          "<span color='#f8f8f2'>▄</span>", // white
+          "<span color='#ffffa5'>▅</span>", // yellow
+          "<span color='#ffffa5'>▆</span>", // yellow
+          "<span color='#ff9977'>▇</span>", // orange
+          "<span color='#dd532e'>█</span>"  // red
+     ]
+  }
+}
