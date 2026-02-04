@@ -91,3 +91,32 @@ window {
   font-size: 45px;
   font-weight: normal;
 }
+
+.time {
+  font-size: 45px;
+  font-weight: normal;
+}
+.time-box {
+  background-color: #141216;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #d8cab8;
+  color: #d8cab8;
+  border-radius: 12px;
+  padding: 5px;
+}
+.timer-start {
+  background-color: #ac82e9;
+  border-radius: 15;
+  margin: 5;
+}
+.timer-pause {
+  background-color: #d8cab8;
+  border-radius: 15;
+  margin: 5;
+}
+.timer-reset {
+  background-color: #fc4649;
+  border-radius: 15;
+  margin: 5;
+}

@@ -64,3 +64,28 @@
     :anchor "bottom right")
   (powermenu)
 )
+
+(defwindow timer
+  :monitor '[0]'
+  :stacking "fg"
+  :namespace "eww"
+  :wm-ignore false
+  :geometry (geometry
+    :x "10"
+    :y "10"
+    :width "300"
+    :height "120"
+    :anchor "top left")
+  (timer_layout)
+)
+
+(defwidget timer_layout []
+  (box :width "250" :height "100" :halign "start" :valign "start" :orientation "vertical" :space-evenly false :class "time-box"
+    (label :text "02:35:22" :class "time")
+    (box :width "90" :height "30" :halign "end" :valign "end" :orientation "horizontal" :class "btn-box"
+      (button :class "timer-start" :onclick "notify-send left")
+      (button :class "timer-pause" :onclick "notify-send middle")
+      (button :class "timer-reset" :onclick "notify-send right")
+    )
+  )
+)
